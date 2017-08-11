@@ -85,9 +85,9 @@
 #endif /* SHTPS_CHECK_HWID_ENABLE */
 
 #if defined(SHTPS_MULTI_FW_ENABLE)
-	#include "tm2955-001/shtps_fw_tm2955-001_es1.h"
-	#include "tm2955-001/shtps_fw_tm2955-001.h"
-	
+	#include "../tm2955-001/shtps_fw_tm2955-001_es1.h"
+	#include "../tm2955-001/shtps_fw_tm2955-001.h"
+
 	typedef struct {
 		unsigned char		hwrev;
 		const unsigned char	*data;
@@ -95,7 +95,7 @@
 		unsigned short		ver;
 		char				*name;
 	} shtps_multi_fw_info_t;
-	
+
 	static const shtps_multi_fw_info_t SHTPS_MULTI_FW_INFO_TBL[] = {
 		{ SHTPS_GET_HW_VERSION_RET_ES_0,   tps_fw_data_es1, SHTPS_FWSIZE_NEWER_ES1, SHTPS_FWVER_NEWER_ES1, "ES1"    },
 		{ SHTPS_GET_HW_VERSION_RET_ES_0_5, tps_fw_data_es1, SHTPS_FWSIZE_NEWER_ES1, SHTPS_FWVER_NEWER_ES1, "ES1"    },
@@ -107,7 +107,7 @@
 	};
 	static const int SHTPS_MULTI_FW_INFO_SIZE = sizeof(SHTPS_MULTI_FW_INFO_TBL) / sizeof(shtps_multi_fw_info_t);
 #else
-	#include "tm2955-001/shtps_fw_tm2955-001.h"
+	#include "../tm2955-001/shtps_fw_tm2955-001.h"
 #endif /* SHTPS_MULTI_FW_ENABLE */
 
 
